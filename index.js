@@ -1,20 +1,12 @@
-const fs=require('fs');
-const path=require('path');
-const dirPath=path.join(__dirname,'crud');
-const filepath=`${dirPath}/apple.txt`;
+const express=require('express');
+const app=express();
 
-//fs.writeFileSync(filepath,"This is simple text file");
+app.get('',(req,res)=>{
+    res.send('Welcome ,to my home page');
+});
 
-// fs.readFile(filepath,'utf8',(err,item)=>{
-//     console.log(item);
-// })
+app.get('/about',(req,res)=>{
+    res.send('welcome ,to my about page');
+});
 
-//   fs.appendFile(filepath," and i am back",(err)=>{
-//     if(!err) console.log("File is updated")
-//   })
-
-//   fs.rename(filepath,`${dirPath}/fruit.txt`,(err)=>{
-//     if(!err) console.log("File is updated")
-//   })
-
- fs.unlinkSync(`${dirPath}/fruit.txt`);
+app.listen(5000);

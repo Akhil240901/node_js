@@ -2,7 +2,8 @@ const express=require('express');
 const app=express();
 
 app.get('',(req,res)=>{
-    res.send('Welcome ,to my home page');
+    console.log("Hey welcome ",req.query.name);
+    res.send('Welcome ,to my home page',+req.query.name);
 });
 
 app.get('/about',(req,res)=>{

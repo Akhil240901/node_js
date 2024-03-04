@@ -1,13 +1,9 @@
+const path=require('path');
 const express=require('express');
 const app=express();
 
-app.get('',(req,res)=>{
-    console.log("Hey welcome ",req.query.name);
-    res.send('Welcome ,to my home page',+req.query.name);
-});
-
-app.get('/about',(req,res)=>{
-    res.send('welcome ,to my about page');
-});
+const pubPath=path.join(__dirname,'public');
+app.use(express.static(pubPath));
 
 app.listen(5000);
+

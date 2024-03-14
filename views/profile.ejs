@@ -4,7 +4,11 @@
     <title>Profile</title>
 </head>
 <body>
+    <% include('common/header') %>
     <h1>welcome <%= user.name %></h1>
-    
+     <ul><% user.skills.forEach((item)=>{ %>
+           <li><%= item %></li>
+        <% }) %>
+     </ul>
 </body>
 </html>

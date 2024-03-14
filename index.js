@@ -16,9 +16,14 @@ app.get('/profile',(req,resp)=>{
     const user={
         name:"akhil bisen",
         city:"gondia",
-        email:"bisenakhl465@fmail.com"
+        email:"bisenakhl465@fmail.com",
+        skills:["java","node","react","c","php"],
     }
     resp.render('profile',{user})
+})
+
+app.get("/login",(req,resp)=>{
+    resp.render('login');
 })
 app.listen(5000);
 

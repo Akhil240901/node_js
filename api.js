@@ -18,10 +18,5 @@ app.post('/',async(req,resp)=>{
     //console.log(req.body);
 })
 
-app.put('/',async(req,resp)=>{
-    let data=await dbConnect();
-    let result=await data.updateOne({name:"mongodb2"},
-    {$set:req.body}) 
-    resp.send(req.body);
-})
+
 app.listen(5000);

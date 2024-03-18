@@ -6,4 +6,4 @@ async function deleteDocument(){
     console.log(result);
 }
 
-deleteDocument();
+deleteDocument(); 

@@ -20,7 +20,7 @@ app.post('/',async(req,resp)=>{
 
 app.put('/name',async(req,resp)=>{
     let data=await dbConnect();
-    let result=await data.updateOne({name:req.body.name},
+    let result=await data.updateOne({name:req.params.name},
     {$set:req.body}) 
     resp.send(req.body);
 })

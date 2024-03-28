@@ -1,8 +1,15 @@
-const mongoConnect=require('./mongoDB');
+const express=require('express');
+require('./config');
+const Product=require('./products');
 
-async function main(){
-    const result=await mongoConnect();
-    const response=await result.find({name:"mongodb"}).toArray(); 
-    console.log(response);
-}
-main();
+const app=express();
+app.use(express.json());
+
+app.post("/create",async(req,resp)=>{
+    let data=new Product(req.body);
+    let result=await data.save(); 
+    console.log(result);
+    resp.send(result);
+})
+
+app.listen(5000);
